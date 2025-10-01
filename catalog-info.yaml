@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-zvdcahgn-gitops
+  description: This is GitOps manifest for go-zvdcahgn   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-zvdcahgn
+    backstage.io/kubernetes-id: go-zvdcahgn 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: rhtap-test-org/go-zvdcahgn-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: rhtap-test-org.go-zvdcahgn-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-zvdcahgn
